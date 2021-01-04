@@ -50,11 +50,14 @@ const createWindow = async () => {
   const iPhone = puppeteer.devices["iPhone 6"];
   const page = await newPage({ show: false });
   await page.emulate(iPhone);
-  await page.goto("https://ip.sb");
+  await page.goto("http://arh.antoinevastel.com/bots/areyouheadless");
   await page.screenshot({ path: "fullpage.png", fullPage: true });
   await page.close();
   const page2 = await newPage();
-  await page2.goto("https://ipip.net");
+  await page2.emulate(iPhone);
+  await page2.goto(
+    "https://www.whatismybrowser.com/detect/what-is-my-user-agent"
+  );
 };
 
 // This method will be called when Electron has finished
