@@ -10,8 +10,7 @@ puppeteer.connect({
   browserURL: `http://localhost:${port}`,
 });
 
-
-实现electron中缺少的、却常用的api，如 newPage
+// 实现electron中缺少的、却常用的api，如 newPage
 const newPage = async (options) => {
   return new Promise((resolve, reject) => {
     const _url = `about:blank?timestamp=${+new Date()}`;
